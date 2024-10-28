@@ -23,7 +23,7 @@
   transform: scale(1.1);
 }
 
-/*ETIQUETAS FLOTANTES*/
+/* Floating Tags */
 .floating-tags {
   position: fixed;
   right: 20px;
@@ -33,39 +33,103 @@
 }
 
 .floating-tag {
-  display: block;
+  display: flex;
+  align-items: center;
   background-color: #4CAF50;
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-weight: 600;
 }
 
-.floating-tag:hover {
+.floating-tag:hover, .floating-tag:focus {
   background-color: #45a049;
+  transform: translateX(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  outline: none;
 }
 
 .floating-tag i {
-  margin-right: 5px;
+  margin-right: 10px;
+  font-size: 1.2em;
 }
 
+/* Modal Styles */
+/* Estilos generales */
+:root {
+  --primary-color: #4CAF50;
+  --primary-dark: #45a049;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --modal-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Estilos de las etiquetas flotantes */
+.floating-tags {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.floating-tag {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.floating-tag:hover, .floating-tag:focus {
+  background-color: var(--primary-dark);
+  transform: translateX(-5px) scale(1.05);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.floating-tag i {
+  margin-right: 10px;
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.floating-tag:hover i {
+  transform: rotate(15deg);
+}
+
+/* Estilos del modal */
 .modal {
   position: fixed;
-  z-index: 1000;
+  z-index: 2000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  backdrop-filter: blur(5px);
 }
 
 .modal.active {
@@ -74,60 +138,212 @@
 }
 
 .modal-content {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--modal-background);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
   width: 90%;
-  max-width: 1000px;
+  max-width: 800px;
   max-height: 90vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transform: scale(0.8);
-  transition: transform 0.3s ease;
+  transform: scale(0.8) translateY(-50px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .modal.active .modal-content {
-  transform: scale(1);
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
+  padding: 20px 30px;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .modal-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
   margin: 0;
 }
 
 .close {
   font-size: 28px;
   font-weight: bold;
-  color: #aaa;
+  color: white;
   background: none;
   border: none;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.close:hover {
-  color: #333;
+.close:hover, .close:focus {
+  transform: rotate(90deg);
+  outline: none;
 }
 
 .modal-body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 30px;
   overflow-y: auto;
 }
+
+/* Estilos específicos del mapa */
+#map {
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.directions {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.directions h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.directions ol {
+  padding-left: 20px;
+}
+
+/* Estilos específicos del formulario de contacto */
+.contact-info {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.contact-info h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: var(--primary-color);
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+  outline: none;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .floating-tags {
+    right: 10px;
+  }
+
+  .floating-tag {
+    padding: 10px 15px;
+    font-size: 0.9em;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+
+  .modal-header {
+    padding: 15px 20px;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+}
+
+/* Barra de desplazamiento personalizada para el cuerpo del modal */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+/* FIN DE MODAL CONTENT*/
+
 
 .carousel-container {
   position: relative;
@@ -1018,102 +1234,118 @@ h2 {
 /* Services Section Styles */
 .section {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .section-title {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 1rem;
-  color: #333;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 3rem;
-  color: #666;
+  color: var(--text-color);
+  margin-bottom: 2rem;
 }
 
 .services-container {
-  display: flex;
-  overflow: hidden; /* Ocultar las tarjetas que están fuera de vista */
   position: relative;
-  width: 100%; /* Ajuste del contenedor para adaptarse al viewport */
+  overflow: hidden;
 }
 
-.services-container::-webkit-scrollbar {
-  display: none; /* WebKit */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.3s ease;
 }
 
 .slider-card {
-  flex: 0 0 auto;
-  width: 300px;
-  margin-right: 20px;
-  scroll-snap-align: start;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .card-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 8px;
 }
 
-.restaurant-card-content {
+.card-content {
+  background-color: var(--card-background);
   padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -40px;
+  position: relative;
 }
 
 .card-title {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #333;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
 }
 
 .card-description {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .card-button {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .card-button:hover {
-  background-color: #0056b3;
+  background-color: #2980b9;
 }
 
-
-@keyframes slide {
-  0% {
-      transform: translateX(0);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
 }
 
-@media (max-width: 768px) {
+.slider-nav.prev {
+  left: 10px;
+}
+
+.slider-nav.next {
+  right: 10px;
+}
+
+@media (min-width: 768px) {
   .slider-card {
-      width: 250px;
+      flex: 0 0 50%;
+      max-width: 50%;
   }
+}
 
-  .section-title {
-      font-size: 2rem;
-  }
-
-  .section-subtitle {
-      font-size: 1rem;
+@media (min-width: 1024px) {
+  .slider-card {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
   }
 }
 /*FINISH TOURS*/

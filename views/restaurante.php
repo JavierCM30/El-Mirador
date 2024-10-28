@@ -54,79 +54,143 @@
     </nav>
 
 
-    <main>
-
-    <div class="price-search">
-        <label for="min-price">Precio mínimo:</label>
-        <input type="number" id="min-price" min="0" value="0">
-        <label for="max-price">Precio máximo:</label>
-        <input type="number" id="max-price" min="0" value="100">
-        <button id="search-btn">Buscar</button>
-    </div>
+    <main class="container">
+        <aside id="search-sidebar">
+            <h2>Buscar en nuestro menú</h2>
+            <div class="search-options">
+                <div class="input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Buscar platos, bebidas...">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-utensils"></i>
+                    <select id="category-select">
+                        <option value="all">Todas las categorías</option>
+                        <option value="entradas">Entradas</option>
+                        <option value="platos">Platos Principales</option>
+                        <option value="postres">Postres</option>
+                        <option value="bebidas">Bebidas</option>
+                        <option value="rapidas">Comidas Rápidas</option>
+                    </select>
+                </div>
+                <div class="price-range">
+                    <label for="min-price">Precio mínimo: S/</label>
+                    <input type="number" id="min-price" min="0" value="0">
+                    <label for="max-price">Precio máximo: S/</label>
+                    <input type="number" id="max-price" min="0" value="100">
+                </div>
+                <button id="search-btn">Buscar</button>
+            </div>
+        </aside>
 
         <section id="menu" class="menu">
-            <div class="container">
-                <h2>Nuestra Carta</h2>
-                <div class="menu-categories">
-                    <button class="category-btn active" data-category="all">Todos</button>
-                    <button class="category-btn" data-category="entradas">Entradas</button>
-                    <button class="category-btn" data-category="platos">Platos Principales</button>
-                    <button class="category-btn" data-category="postres">Postres</button>
+            <h2>Nuestro Menú</h2>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="entradas">Entradas</button>
+                <button class="category-btn" data-category="platos">Platos Principales</button>
+                <button class="category-btn" data-category="postres">Postres</button>
+                <button class="category-btn" data-category="bebidas">Bebidas</button>
+                <button class="category-btn" data-category="rapidas">Comidas Rápidas</button>
+            </div>
+            <div class="menu-items">
+                <!-- Entradas -->
+                <div class="menu-item animate__animated animate__fadeIn" data-category="entradas">
+                    <img src="<?php echo $url .'public/resources/img/ceviche.jpg' ?>" alt="Ceviche de Trucha">
+                    <div class="menu-item-content">
+                        <h3>Ceviche de Trucha</h3>
+                        <p>Trucha fresca marinada en limón con cebolla, cilantro y ají.</p>
+                        <span class="price">S/ 25.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
+                    </div>
                 </div>
-                <div class="menu-items">
-                    <div class="menu-item" data-category="entradas">
-                        <img src="<?php echo $url .'public/resources/img/ceviche.jpg' ?>" alt="Ceviche de Trucha">
-                        <div class="menu-item-content">
-                            <h3>Ceviche de Trucha</h3>
-                            <p>Trucha fresca marinada en limón con cebolla, cilantro y ají.</p>
-                            <span class="price">S/ 25.00</span>
-                            <a href="#" class="order-btn">Ordenar</a>
-                        </div>
+                <div class="menu-item animate__animated animate__fadeIn" data-category="entradas">
+                    <img src="<?php echo $url .'public/resources/img/causa.jpg' ?>" alt="Causa Rellena">
+                    <div class="menu-item-content">
+                        <h3>Causa Rellena</h3>
+                        <p>Puré de papa amarilla relleno de pollo, palta y mayonesa.</p>
+                        <span class="price">S/ 18.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
                     </div>
-                    <div class="menu-item" data-category="entradas">
-                        <img src="<?php echo $url .'public/resources/img/aji.jpg' ?>" alt="Sopa de Gallina">
-                        <div class="menu-item-content">
-                            <h3>Aji De Gallina</h3>
-                            <p>Un jugoso plato especial de la casa, con los mejores ingredientes y su mejore seleccion.</p>
-                            <span class="price">S/ 20.00</span>
-                            <a href="#" class="order-btn">Ordenar</a>
-                        </div>
+                </div>
+
+                <!-- Platos Principales -->
+                <div class="menu-item animate__animated animate__fadeIn" data-category="platos">
+                    <img src="<?php echo $url .'public/resources/img/lomo.jpg' ?>" alt="Lomo Saltado">
+                    <div class="menu-item-content">
+                        <h3>Lomo Saltado</h3>
+                        <p>Jugoso lomo saltado hecho con las mejores carnes de la región.</p>
+                        <span class="price">S/ 35.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
                     </div>
-                    <div class="menu-item" data-category="platos">
-                        <img src="<?php echo $url .'public/resources/img/lomo.jpg' ?>" alt="Cecina con Tacacho">
-                        <div class="menu-item-content">
-                            <h3>Lomo Saltado</h3>
-                            <p>Jugoso lomo saltado hecho con las mejores carnes de la region</p>
-                            <span class="price">S/ 35.00</span>
-                            <a href="#" class="order-btn">Ordenar</a>
-                        </div>
+                </div>
+                <div class="menu-item animate__animated animate__fadeIn" data-category="platos">
+                    <img src="<?php echo $url .'public/resources/img/aji.jpg' ?>" alt="Ají de Gallina">
+                    <div class="menu-item-content">
+                        <h3>Ají de Gallina</h3>
+                        <p>Cremoso plato de pollo deshilachado en salsa de ají amarillo.</p>
+                        <span class="price">S/ 28.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
                     </div>
-                    <div class="menu-item" data-category="platos">
-                        <img src="<?php echo $url .'public/resources/img/huancaina.jpg' ?>" alt="Juane">
-                        <div class="menu-item-content">
-                            <h3>Papa A La Huancaina</h3>
-                            <p>Papas naturales de la region, con las mejores cremas de manos expertas</p>
-                            <span class="price">S/ 30.00</span>
-                            <a href="#" class="order-btn">Ordenar</a>
-                        </div>
+                </div>
+
+                <!-- Postres -->
+                <div class="menu-item animate__animated animate__fadeIn" data-category="postres">
+                    <img src="<?php echo $url .'public/resources/img/mazamorra.jpg' ?>" alt="Mazamorra Morada">
+                    <div class="menu-item-content">
+                        <h3>Mazamorra Morada</h3>
+                        <p>Postre tradicional hecho de maíz morado y frutas.</p>
+                        <span class="price">S/ 15.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
                     </div>
-                    <div class="menu-item" data-category="postres">
-                        <img src="<?php echo $url .'public/resources/img/mazamorra.jpg' ?>" alt="Helado de Aguaje">
-                        <div class="menu-item-content">
-                            <h3>Mazamorra</h3>
-                            <p>Postre especialista de la region con los mejores ingredientes</p>
-                            <span class="price">S/ 15.00</span>
-                            <a href="#" class="order-btn">Ordenar</a>
-                        </div>
+                </div>
+                <div class="menu-item animate__animated animate__fadeIn" data-category="postres">
+                    <img src="<?php echo $url .'public/resources/img/suspiro.jpg' ?>" alt="Suspiro Limeño">
+                    <div class="menu-item-content">
+                        <h3>Suspiro Limeño</h3>
+                        <p>Dulce postre a base de leche condensada y merengue.</p>
+                        <span class="price">S/ 12.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
                     </div>
-                    <div class="menu-item" data-category="postres">
-                        <img src="<?php echo $url .'public/resources/img/coffe.jpeg' ?>" alt="Mazamorra de Calabaza">
-                        <div class="menu-item-content">
-                            <h3>Cafe</h3>
-                            <p>Hecho con los mejores granso de cafe artesanal, recojidos de la misma region</p>
-                            <span class="price">S/ 12.00</span>
-                            <a href="#" class="order-btn">Ordenar</a>
-                        </div>
+                </div>
+
+                <!-- Bebidas -->
+                <div class="menu-item animate__animated animate__fadeIn" data-category="bebidas">
+                    <img src="<?php echo $url .'public/resources/img/chicha.jpg' ?>" alt="Chicha Morada">
+                    <div class="menu-item-content">
+                        <h3>Chicha Morada</h3>
+                        <p>Refrescante bebida hecha de maíz morado, piña, canela y clavo.</p>
+                        <span class="price">S/ 8.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
+                    </div>
+                </div>
+                <div class="menu-item animate__animated animate__fadeIn" data-category="bebidas">
+                    <img src="<?php echo $url .'/public/resources/img/pisco.png' ?>" alt="Pisco Sour">
+                    <div class="menu-item-content">
+                        <h3>Pisco Sour</h3>
+                        <p>Cóctel peruano hecho con pisco, limón, clara de huevo y jarabe de goma.</p>
+                        <span class="price">S/ 15.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
+                    </div>
+                </div>
+
+                <!-- Comidas Rápidas -->
+                <div class="menu-item animate__animated animate__fadeIn" data-category="rapidas">
+                    <img src="<?php echo $url .'public/resources/img/burguer.webp' ?>" alt="Hamburguesa Clásica">
+                    <div class="menu-item-content">
+                        <h3>Hamburguesa Clásica</h3>
+                        <p>Jugosa hamburguesa con queso, lechuga, tomate y nuestra salsa especial.</p>
+                        <span class="price">S/ 18.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
+                    </div>
+                </div>
+                <div class="menu-item animate__animated animate__fadeIn" data-category="rapidas">
+                    <img src="<?php echo $url .'/public/resources/img/salchi.jpg' ?>" alt="Salchipapa">
+                    <div class="menu-item-content">
+                        <h3>Salchipapa</h3>
+                        <p>Combinación de papas fritas y salchichas, acompañada de salsas.</p>
+                        <span class="price">S/ 12.00</span>
+                        <a href="#" class="order-btn">Ordenar</a>
                     </div>
                 </div>
             </div>

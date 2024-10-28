@@ -26,12 +26,10 @@
         <a href="#como-llegar" class="floating-tag" id="how-to-arrive">
             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
             <span>¿Cómo llegar?</span>
-            <span class="sr-only">Información sobre cómo llegar al hospedaje</span>
         </a>
         <a href="#contacto" class="floating-tag" id="contact-us">
             <i class="fas fa-envelope" aria-hidden="true"></i>
             <span>Contáctanos</span>
-            <span class="sr-only">Formulario de contacto</span>
         </a>
     </div>
     
@@ -246,63 +244,76 @@
                 <h2 class="section-title">Servicios y Tours</h2>
                 <p class="section-subtitle">Vive experiencias inolvidables durante tu estancia</p>
                 <div class="services-container">
-                    <div class="slider-card">
-                        <img src="../public/resources/img/chachapoyas.png" alt="Tour por la ciudad" class="card-img">
-                        <div class="restaurant-card-content">
-                            <h3 class="card-title">Tour por la Ciudad</h3>
-                            <p class="card-description">Descubra los secretos y la historia de Chachapoyas con nuestros guías expertos. Una experiencia cultural enriquecedora.</p>
-                            <a href="#" class="card-button">Reservar Ahora</a>
+                    <button class="slider-nav prev" aria-label="Previous slide">&lt;</button>
+                    <div class="slider-wrapper">
+                        <div class="slider-card">
+                            <img src="<?php echo $url .'public/resources/img/chachapoyas.png'?>" alt="Tour por la ciudad" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Tour por la Ciudad</h3>
+                                <p class="card-description">Descubra los secretos y la historia de Chachapoyas con nuestros guías expertos. Una experiencia cultural enriquecedora.</p>
+                                <a href="#" class="card-button">Reservar Ahora</a>
+                            </div>
+                        </div>
+                        <div class="slider-card">
+                            <img src="<?php echo $url .'public/resources/img/kuelap.jpeg' ?>" alt="Excursión a Kuelap" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Excursión a Kuelap</h3>
+                                <p class="card-description">Visite la impresionante fortaleza de Kuelap, conocida como el "Machu Picchu del norte". Una maravilla arqueológica que no puede perderse.</p>
+                                <a href="#" class="card-button">Más Información</a>
+                            </div>
+                        </div>
+                        <div class="slider-card">
+                            <img src="<?php echo $url .'public/resources/img/gocta.jpeg' ?>" alt="Catarata de Gocta" class="card-img">
+                            <div class="card-content">
+                                <h3 class="card-title">Catarata de Gocta</h3>
+                                <p class="card-description">Aventúrese a una de las cataratas más altas del mundo. Una experiencia de senderismo y naturaleza inolvidable.</p>
+                                <a href="#" class="card-button">Planear Aventura</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="slider-card">
-                        <img src="../public/resources/img/kuelap.jpeg" alt="Excursión a Kuelap" class="card-img">
-                        <div class="restaurant-card-content">
-                            <h3 class="card-title">Excursión a Kuelap</h3>
-                            <p class="card-description">Visite la impresionante fortaleza de Kuelap, conocida como el "Machu Picchu del norte". Una maravilla arqueológica que no puede perderse.</p>
-                            <a href="#" class="card-button">Más Información</a>
-                        </div>
-                    </div>
-                    <div class="slider-card">
-                        <img src="../public/resources/img/gocta.jpeg" alt="Catarata de Gocta" class="card-img">
-                        <div class="restaurant-card-content">
-                            <h3 class="card-title">Catarata de Gocta</h3>
-                            <p class="card-description">Aventúrese a una de las cataratas más altas del mundo. Una experiencia de senderismo y naturaleza inolvidable.</p>
-                            <a href="#" class="card-button">Planear Aventura</a>
-                        </div>
-                    </div>
+                    <button class="slider-nav next" aria-label="Next slide">&gt;</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <div id="how-to-arrive-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>¿Cómo llegar?</h2>
-            <p>Estamos ubicados en el corazón de Chachapoyas, Perú. Sigue estas instrucciones:</p>
-            <ol>
-                <li>Desde el aeropuerto de Chachapoyas, toma un taxi hacia el centro de la ciudad.</li>
-                <li>Pide al conductor que te lleve a la Plaza de Armas.</li>
-                <li>Desde allí, camina dos cuadras hacia el norte.</li>
-                <li>Verás nuestro letrero "Hospedaje El Mirador" a tu derecha.</li>
-            </ol>
-            <div class="map-container">
-                <!-- Aquí puedes insertar un mapa de Google Maps -->
-                <img src="https://via.placeholder.com/600x300" alt="Mapa de ubicación" class="map-placeholder">
+    <div id="mapModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">¿Cómo llegar?</h2>
+            <button class="close" aria-label="Cerrar">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="map" style="height: 400px; width: 100%;"></div>
+            <div class="directions">
+                <h3>Direcciones:</h3>
+                <p>Hospedaje El Mirador se encuentra en Av. Principal 123, Chachapoyas, Perú.</p>
+                <ol>
+                    <li>Desde el aeropuerto, tome la ruta principal hacia el centro de la ciudad.</li>
+                    <li>Gire a la derecha en la Av. Principal.</li>
+                    <li>Continúe por 500 metros, encontrará El Mirador a su izquierda.</li>
+                </ol>
             </div>
         </div>
     </div>
+</div>
 
-    <div id="contact-us-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Contáctanos</h2>
-            <p>Estamos aquí para ayudarte. Contáctanos a través de los siguientes medios:</p>
-            <ul class="contact-info">
-                <li><i class="fas fa-phone"></i> +51 123 456 789</li>
-                <li><i class="fas fa-envelope"></i> info@hospedajeelmirador.com</li>
-                <li><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Chachapoyas, Perú</li>
-            </ul>
+<!-- Modal para "Contáctanos" -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Contáctanos</h2>
+            <button class="close" aria-label="Cerrar">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="contact-info">
+                <h3>Información de contacto:</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +51 123 456 789</li>
+                    <li><i class="fas fa-envelope"></i> info@hospedajeelmirador.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Av. Principal 123, Chachapoyas, Perú</li>
+                </ul>
+            </div>
             <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <label for="name">Nombre:</label>
@@ -320,6 +331,7 @@
             </form>
         </div>
     </div>
+</div>
 
     <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -366,5 +378,8 @@
     <script src="<?php echo $url .'public/resources/js/header.js?v='. time(); ?>"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="<?php echo $url .'public/resources/js/index.js?v='.time()?>"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer></script>
+    <script src="<?php echo $url .'public/resources/js/geolocalizacion.js?v='. time(); ?>"></script>
+
 </body>
 </html>

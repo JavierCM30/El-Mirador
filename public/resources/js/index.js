@@ -282,72 +282,69 @@ document.addEventListener('DOMContentLoaded', () => {
 // FINISH SECTION RESTAURANTE
 
 // SECTION TOURS
-document.addEventListener('DOMContentLoaded', () => {
-    const sidebarContent = document.querySelector('.sidebar-content');
-    const sliderCards = document.querySelectorAll('.slider-card');
+// script.js
 
-    // Clonar items para asegurar rotación continua
-    sliderCards.forEach(card => {
-        const clone = card.cloneNode(true);
-        sidebarContent.appendChild(clone);
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const slides = document.querySelectorAll('.slider-card');
+    const prevButton = document.querySelector('.slider-nav.prev');
+    const nextButton = document.querySelector('.slider-nav.next');
+    let currentIndex = 0;
 
-    // Función para ajustar la velocidad de rotación basada en la altura del contenido
-    function adjustRotationSpeed() {
-        const contentHeight = sidebarContent.scrollHeight; // Usar la altura completa del contenido
-        const rotationDuration = contentHeight / 30; // Ajustar '30' para cambiar la velocidad
-        sidebarContent.style.animation = `rotate ${rotationDuration}s linear infinite`;
+    function updateSlider() {
+        const slideWidth = slides[0].offsetWidth;
+        sliderWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
-    // Llamar a la función en la carga y al redimensionar
-    adjustRotationSpeed();
-    window.addEventListener('resize', adjustRotationSpeed);
+    function showSlide(index) {
+        currentIndex = index;
+        updateSlider();
+    }
 
-    // Pausar rotación al pasar el mouse
-    sidebarContent.addEventListener('mouseenter', () => {
-        sidebarContent.style.animationPlayState = 'paused';
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    // Responsive behavior
+    function handleResize() {
+        updateSlider();
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    sliderWrapper.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
     });
 
-    // Reanudar rotación al quitar el mouse
-    sidebarContent.addEventListener('mouseleave', () => {
-        sidebarContent.style.animationPlayState = 'running';
+    sliderWrapper.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
     });
 
-    // Eventos de toque para dispositivos móviles
-    let touchStartY = 0;
-    let touchEndY = 0;
-    let isScrolling = false;
-
-    sidebarContent.addEventListener('touchstart', (e) => {
-        touchStartY = e.touches[0].clientY;
-        sidebarContent.style.animationPlayState = 'paused';
-        isScrolling = false;
-    });
-
-    sidebarContent.addEventListener('touchmove', (e) => {
-        touchEndY = e.touches[0].clientY;
-        const touchDiff = touchStartY - touchEndY;
-
-        // Ajustar la posición del scroll con base en la dirección del toque
-        sidebarContent.style.transform = `translateY(${-touchDiff}px)`;
-        isScrolling = true;
-    });
-
-    sidebarContent.addEventListener('touchend', (e) => {
-        if (!isScrolling) {
-            sidebarContent.style.animationPlayState = 'running';
-        } else {
-            // Restablecer después del desplazamiento
-            setTimeout(() => {
-                sidebarContent.style.transition = 'none';
-                sidebarContent.style.transform = 'translateY(0)';
-                setTimeout(() => {
-                    sidebarContent.style.transition = 'transform 0.3s ease';
-                    sidebarContent.style.animationPlayState = 'running';
-                }, 50);
-            }, 300);
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            nextSlide();
         }
-    });
+        if (touchEndX > touchStartX) {
+            prevSlide();
+        }
+    }
+
+    // Initialize
+    updateSlider();
 });
 
 // FINISH SECTION TOURS
@@ -508,4 +505,82 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //ETIQUETAS FLOTANTES
+document.addEventListener('DOMContentLoaded', function() {
+    const howToArriveTag = document.getElementById('how-to-arrive');
+    const contactUsTag = document.getElementById('contact-us');
+    const mapModal = document.getElementById('mapModal');
+    const contactModal = document.getElementById('contactModal');
+    const closeBtns = document.querySelectorAll('.close');
 
+    function openModal(modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+
+    function closeModal(modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    howToArriveTag.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(mapModal);
+        initMap(); // Initialize the map when the modal opens
+    });
+
+    contactUsTag.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(contactModal);
+    });
+
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            closeModal(this.closest('.modal'));
+        });
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            closeModal(event.target);
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const activeModal = document.querySelector('.modal.active');
+            if (activeModal) {
+                closeModal(activeModal);
+            }
+        }
+    });
+
+    // Initialize and add the map
+    function initMap() {
+        // The location of your hotel (replace with actual coordinates)
+        const hotelLocation = { lat: -6.2308, lng: -77.8716 }; // Example coordinates for Chachapoyas
+        // The map, centered at your hotel
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: hotelLocation,
+        });
+        // The marker, positioned at your hotel
+        const marker = new google.maps.Marker({
+            position: hotelLocation,
+            map: map,
+        });
+    }
+
+    // Make initMap global so it can be called when the modal opens
+    window.initMap = initMap;
+
+    // Handle form submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        alert('Mensaje enviado con éxito!');
+        contactForm.reset();
+    });
+});

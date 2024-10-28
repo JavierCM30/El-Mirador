@@ -63,12 +63,12 @@
                 <div class="card">
                     <div class="card-content">
                         <img src="https://via.placeholder.com/150" alt="Avatar" class="profile-avatar" id="userAvatar">
-                        <h2 id="nombreCompleto"><?php echo htmlspecialchars($row['nombre'] . ' ' . $row['apellidos']); ?></h2>
-                        <p id="usuario" class="username">@<?php echo htmlspecialchars($user); ?></p>
+                        <h2 id="nombreCompleto">Javier Culqui Montoya</h2>
+                        <p id="usuario" class="username">@JavierCM30</p>
                         <div class="profile-details">
-                            <p><i class="fas fa-phone"></i> <span id="celular"><?php echo htmlspecialchars($row['telefono']); ?></span></p>
-                            <p><i class="fas fa-map-marker-alt"></i> <span id="direccion"><?php echo htmlspecialchars($row['direccion']); ?></span></p>
-                            <p><i class="fas fa-envelope"></i> <span id="correo"><?php echo htmlspecialchars($row['email']); ?></span></p>
+                            <p><i class="fas fa-phone"></i> <span id="celular">+ 51 916 410 461</span></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <span id="direccion">Psj. Porvenir</span></p>
+                            <p><i class="fas fa-envelope"></i> <span id="correo">javierc06montoya@gmail.com</span></p>
                         </div>
                         <button id="editarPerfil" class="btn btn-primary">Editar Perfil</button>
                     </div>
