@@ -85,81 +85,81 @@
         </section>
 
         <section id="habitaciones" class="rooms">
-        <div class="container">
-            <h2>Nuestras Habitaciones</h2>
-            <div class="category-menu">
-                <button class="category-btn active" data-category="todas">Todas</button>
-                <button class="category-btn" data-category="simple">Simples</button>
-                <button class="category-btn" data-category="doble">Dobles</button>
-                <button class="category-btn" data-category="matrimonial">Matrimoniales</button>
-                <button class="category-btn" data-category="grupal">Grupales</button>
+            <div class="container">
+                <h2>Nuestras Habitaciones</h2>
+                <div class="category-menu">
+                    <button class="category-btn active" data-category="todas">Todas</button>
+                    <button class="category-btn" data-category="simple">Simples</button>
+                    <button class="category-btn" data-category="doble">Dobles</button>
+                    <button class="category-btn" data-category="matrimonial">Matrimoniales</button>
+                    <button class="category-btn" data-category="grupal">Grupales</button>
+                </div>
+                <div class="room-catalog">
+                    <div class="room-card" data-category="simple">
+                        <img src="<?php echo $url .'public/resources/img/room-individual.png'?>" alt="Habitación Individual" class="room-image">
+                        <div class="room-info">
+                            <h3>Habitación Individual</h3>
+                            <p>Perfecta para viajeros solitarios</p>
+                            <span class="room-price">$50/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="room-card" data-category="doble">
+                        <img src="<?php echo $url .'public/resources/img/room-doble.jpg'?>" alt="Habitación Doble" class="room-image">
+                        <div class="room-info">
+                            <h3>Habitación Doble</h3>
+                            <p>Ideal para parejas o amigos</p>
+                            <span class="room-price">$80/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                                <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="room-card" data-category="matrimonial">
+                        <img src="<?php echo $url .'public/resources/img/room.matrimonial.jpg'?>" alt="Suite Matrimonial" class="room-image">
+                        <div class="room-info">
+                            <h3>Suite Matrimonial</h3>
+                            <p>Romántica y espaciosa</p>
+                            <span class="room-price">$100/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                                <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
+                                <span class="service-item"><i class="fas fa-coffee"></i> Desayuno</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="room-card" data-category="grupal">
+                        <img src="<?php echo $url .'public/resources/img/room-grupal.png'?>" alt="Habitación Familiar" class="room-image">
+                        <div class="room-info">
+                            <h3>Habitación Familiar</h3>
+                            <p>Perfecta para grupos o familias</p>
+                            <span class="room-price">$150/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                                <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
+                                <span class="service-item"><i class="fas fa-coffee"></i> Desayuno</span>
+                                <span class="service-item"><i class="fas fa-utensils"></i> Cocina</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="room-catalog">
-                <div class="room-card" data-category="simple">
-                    <img src="<?php echo $url .'public/resources/img/room-individual.png'?>" alt="Habitación Individual" class="room-image">
-                    <div class="room-info">
-                        <h3>Habitación Individual</h3>
-                        <p>Perfecta para viajeros solitarios</p>
-                        <span class="room-price">$50/noche</span>
-                        <div class="room-services">
-                            <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
-                            <span class="service-item"><i class="fas fa-tv"></i> TV</span>
-                            <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
-                        </div>
-                        <a href="#" class="book-btn">Reservar</a>
-                    </div>
-                </div>
-                <div class="room-card" data-category="doble">
-                    <img src="<?php echo $url .'public/resources/img/room-doble.jpg'?>" alt="Habitación Doble" class="room-image">
-                    <div class="room-info">
-                        <h3>Habitación Doble</h3>
-                        <p>Ideal para parejas o amigos</p>
-                        <span class="room-price">$80/noche</span>
-                        <div class="room-services">
-                            <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
-                            <span class="service-item"><i class="fas fa-tv"></i> TV</span>
-                            <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
-                            <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
-                        </div>
-                        <a href="#" class="book-btn">Reservar</a>
-                    </div>
-                </div>
-                <div class="room-card" data-category="matrimonial">
-                    <img src="<?php echo $url .'public/resources/img/room.matrimonial.jpg'?>" alt="Suite Matrimonial" class="room-image">
-                    <div class="room-info">
-                        <h3>Suite Matrimonial</h3>
-                        <p>Romántica y espaciosa</p>
-                        <span class="room-price">$100/noche</span>
-                        <div class="room-services">
-                            <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
-                            <span class="service-item"><i class="fas fa-tv"></i> TV</span>
-                            <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
-                            <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
-                            <span class="service-item"><i class="fas fa-coffee"></i> Desayuno</span>
-                        </div>
-                        <a href="#" class="book-btn">Reservar</a>
-                    </div>
-                </div>
-                <div class="room-card" data-category="grupal">
-                    <img src="<?php echo $url .'public/resources/img/room-grupal.png'?>" alt="Habitación Familiar" class="room-image">
-                    <div class="room-info">
-                        <h3>Habitación Familiar</h3>
-                        <p>Perfecta para grupos o familias</p>
-                        <span class="room-price">$150/noche</span>
-                        <div class="room-services">
-                            <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
-                            <span class="service-item"><i class="fas fa-tv"></i> TV</span>
-                            <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
-                            <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
-                            <span class="service-item"><i class="fas fa-coffee"></i> Desayuno</span>
-                            <span class="service-item"><i class="fas fa-utensils"></i> Cocina</span>
-                        </div>
-                        <a href="#" class="book-btn">Reservar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <div id="roomModal" class="modal">
         <div class="modal-content">
