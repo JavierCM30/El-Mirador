@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // START HERO SECTION SLIDER
+
+
 // Variables
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.carousel-slide');

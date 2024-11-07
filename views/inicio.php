@@ -1,8 +1,6 @@
 <?php
     include '../config/app.php';
-
     session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -377,7 +375,7 @@
 
     <script src="<?php echo $url .'public/resources/js/header.js?v='. time(); ?>"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="<?php echo $url .'public/resources/js/index.js?v='.time()?>"></script>
+    <script src="<?php echo $url .'public/resources/js/index.js?v='.time(); ?>"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer></script>
     <script src="<?php echo $url .'public/resources/js/geolocalizacion.js?v='. time(); ?>"></script>
 

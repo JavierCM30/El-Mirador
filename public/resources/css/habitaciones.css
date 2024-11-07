@@ -317,10 +317,12 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.service-grid {
+.service-grid,
+.service-grid a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+    text-decoration: none !important;
 }
 
 .service-card {
@@ -344,6 +346,11 @@ h2 {
 .service-card h3 {
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
+}
+
+.service-card p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 /* Contact Section */

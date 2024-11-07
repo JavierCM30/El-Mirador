@@ -193,7 +193,7 @@
                         <div class="service-card">
                         <i class="fa-solid fa-car-on"></i>
                             <h3>Tours</h3>
-                            <p>Conectate con toda la cultura de <strong>Chachapoyas</strong>en un viaje sin igual</p>
+                            <p>Conectate con toda la cultura de <strong>Chachapoyas</strong> en un viaje sin igual</p>
                         </div>
                     </a>    
                     <a href="restaurante.php">                    
@@ -203,11 +203,11 @@
                             <p>Buffet variado todas las mañanas</p>
                         </div>
                     </a>
-                    <div class="service-card">
-                    <i class="fa-solid fa-door-open"></i>
-                        <h3>Sala De Descanaso</h3>
-                        <p>Para un descanso placentero en compañia con todo tus compañeros y familiares</p>
-                    </div>
+                        <div class="service-card">
+                            <i class="fa-solid fa-door-open"></i>
+                            <h3>Sala De Descanaso</h3>
+                            <p>Para un descanso placentero en compañia con todo tus compañeros y familiares</p>
+                        </div>
                 </div>
             </div>
         </section>
