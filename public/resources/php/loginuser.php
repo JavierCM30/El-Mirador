@@ -1,6 +1,8 @@
 <?php
+
 session_start(); // Iniciar la sesión
 require_once '../../../config/conexion.php'; // Conexión a la base de datos
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recibiendo datos del formulario

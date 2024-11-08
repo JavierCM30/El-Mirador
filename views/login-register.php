@@ -1,6 +1,5 @@
 <?php
 session_start(); // Iniciar la sesión para acceder a las variables de sesión
-include '../config/app.php';
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +50,7 @@ include '../config/app.php';
         
         <!-- Formulario de inicio de sesión -->
         <div class="form-container sign-in-container">
-            <form id="signInForm" action="../resources/php/loginuser.php" method="POST">
+            <form id="signInForm" action="<?php echo$url. 'public/resources/php/loginuser.php' ?>" method="POST">
                 <h1>Iniciar Sesión</h1>
                 <input type="email" name="correo" placeholder="Email" id="signInEmail" required />
                 <div class="input-group">

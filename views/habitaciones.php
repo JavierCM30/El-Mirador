@@ -43,8 +43,8 @@
 
     <nav class="mobile-nav">
         <a href="../" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
-        <a href="../restaurante" class="nav-link"><i class="fa-solid fa-utensils"></i> Restaurante</a>
-        <a href="../tours" class="nav-link"><i class="fas fa-concierge-bell"></i> Tours</a>
+        <a href="../restaurante/" class="nav-link"><i class="fa-solid fa-utensils"></i> Restaurante</a>
+        <a href="../tours/" class="nav-link"><i class="fas fa-concierge-bell"></i> Tours</a>
         <?php if (isset($_SESSION['nombre'])): ?>
             <a href="../perfil/" class="nav-link"><i class="fas fa-user"></i> <?php echo htmlspecialchars($_SESSION['nombre']); ?></a>
             <a href="../logout/"><button class="login-btn">Cerrar Sesión</button></a>
@@ -95,6 +95,68 @@
                     <button class="category-btn" data-category="grupal">Grupales</button>
                 </div>
                 <div class="room-catalog">
+                    <div class="room-card" data-category="simple">
+                        <img src="<?php echo $url .'public/resources/img/room-individual.png'?>" alt="Habitación Individual" class="room-image">
+                        <div class="room-info">
+                            <h3>Habitación Individual</h3>
+                            <p>Perfecta para viajeros solitarios</p>
+                            <span class="room-price">$50/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="room-card" data-category="doble">
+                        <img src="<?php echo $url .'public/resources/img/room-doble.jpg'?>" alt="Habitación Doble" class="room-image">
+                        <div class="room-info">
+                            <h3>Habitación Doble</h3>
+                            <p>Ideal para parejas o amigos</p>
+                            <span class="room-price">$80/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                                <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
+                            </div>
+                            <a href="" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="room-card" data-category="matrimonial">
+                        <img src="<?php echo $url .'public/resources/img/room.matrimonial.jpg'?>" alt="Suite Matrimonial" class="room-image">
+                        <div class="room-info">
+                            <h3>Suite Matrimonial</h3>
+                            <p>Romántica y espaciosa</p>
+                            <span class="room-price">$100/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                                <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
+                                <span class="service-item"><i class="fas fa-coffee"></i> Desayuno</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="room-card" data-category="grupal">
+                        <img src="<?php echo $url .'public/resources/img/room-grupal.png'?>" alt="Habitación Familiar" class="room-image">
+                        <div class="room-info">
+                            <h3>Habitación Familiar</h3>
+                            <p>Perfecta para grupos o familias</p>
+                            <span class="room-price">$150/noche</span>
+                            <div class="room-services">
+                                <span class="service-item"><i class="fas fa-wifi"></i> Wi-Fi</span>
+                                <span class="service-item"><i class="fas fa-tv"></i> TV</span>
+                                <span class="service-item"><i class="fas fa-wind"></i> A/C</span>
+                                <span class="service-item"><i class="fas fa-parking"></i> Parking</span>
+                                <span class="service-item"><i class="fas fa-coffee"></i> Desayuno</span>
+                                <span class="service-item"><i class="fas fa-utensils"></i> Cocina</span>
+                            </div>
+                            <a href="#" class="book-btn">Reservar</a>
+                        </div>
+                    </div>
                     <div class="room-card" data-category="simple">
                         <img src="<?php echo $url .'public/resources/img/room-individual.png'?>" alt="Habitación Individual" class="room-image">
                         <div class="room-info">
@@ -262,7 +324,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/916410461" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

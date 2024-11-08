@@ -62,7 +62,7 @@
             <aside class="profile-sidebar">
                 <div class="card">
                     <div class="card-content">
-                        <img src="https://via.placeholder.com/150" alt="Avatar" class="profile-avatar" id="userAvatar">
+                        <img src="<?php echo $url .'public/resources/img/perfil.png' ?>" alt="Avatar" class="profile-avatar" id="userAvatar">
                         <h2 id="nombreCompleto">Javier Culqui Montoya</h2>
                         <p id="usuario" class="username">@JavierCM30</p>
                         <div class="profile-details">

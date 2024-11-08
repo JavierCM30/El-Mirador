@@ -141,8 +141,44 @@
                                 <button class="book-now">Reservar</button>
                             </div>
                         </div>
+                        
+                    </div>
+                    <div class="room-card grupales">
+                        <img src="../public/resources/img/room1.avif" alt="Habitación Grupal" class="card-img">
+                        <div class="room-card-content">
+                            <h2>Habitación Deluxe Grupal</h2>
+                            <p>Una habitación cómoda con vista al mar, camas amplias, wifi gratuito, y desayuno incluido.</p>
+                            <ul>
+                                <li><i class="fas fa-bed"></i> 4 Camas individuales</li>
+                                <li><i class="fas fa-wifi"></i> Wifi gratuito</li>
+                                <li><i class="fas fa-coffee"></i> Desayuno incluido</li>
+                                <li><i class="fas fa-tv"></i> TV de 50''</li>
+                            </ul>
+                            <div class="price">
+                                <span>S/ 300.00</span>
+                                <button class="book-now">Reservar</button>
+                            </div>
+                        </div>
+                        
                     </div>
                     
+                    <div class="room-card simples">
+                        <img src="../public/resources/img/room2.jpg" alt="Habitación Simple" class="card-img">
+                        <div class="room-card-content">
+                            <h2>Habitación Simple Confort</h2>
+                            <p>Perfecta para el viajero solitario, con todas las comodidades necesarias.</p>
+                            <ul>
+                                <li><i class="fas fa-bed"></i> 1 Cama individual</li>
+                                <li><i class="fas fa-wifi"></i> Wifi gratuito</li>
+                                <li><i class="fas fa-coffee"></i> Desayuno incluido</li>
+                                <li><i class="fas fa-tv"></i> TV de 32''</li>
+                            </ul>
+                            <div class="price">
+                                <span>S/ 100.00</span>
+                                <button class="book-now">Reservar</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="room-card simples">
                         <img src="../public/resources/img/room2.jpg" alt="Habitación Simple" class="card-img">
                         <div class="room-card-content">
@@ -178,6 +214,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="room-card dobles">
+                        <img src="../public/resources/img/room3.avif" alt="Habitación Doble" class="card-img">
+                        <div class="room-card-content">
+                            <h2>Habitación Doble Superior</h2>
+                            <p>Espaciosa habitación con dos camas, ideal para amigos o familiares.</p>
+                            <ul>
+                                <li><i class="fas fa-bed"></i> 2 Camas individuales</li>
+                                <li><i class="fas fa-wifi"></i> Wifi gratuito</li>
+                                <li><i class="fas fa-coffee"></i> Desayuno incluido</li>
+                                <li><i class="fas fa-tv"></i> TV de 40''</li>
+                            </ul>
+                            <div class="price">
+                                <span>S/ 200.00</span>
+                                <button class="book-now">Reservar</button>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="room-card matrimoniales">
                         <img src="../public/resources/img/room4.jpg" alt="Habitación Matrimonial" class="card-img">
@@ -196,8 +249,27 @@
                             </div>
                         </div>
                     </div>
+                    <div class="room-card matrimoniales">
+                        <img src="../public/resources/img/room4.jpg" alt="Habitación Matrimonial" class="card-img">
+                        <div class="room-card-content">
+                            <h2>Suite Matrimonial</h2>
+                            <p>Lujosa suite con cama king-size, perfecta para parejas en busca de confort y romance.</p>
+                            <ul>
+                                <li><i class="fas fa-bed"></i> 1 Cama King-size</li>
+                                <li><i class="fas fa-wifi"></i> Wifi gratuito</li>
+                                <li><i class="fas fa-coffee"></i> Desayuno incluido</li>
+                                <li><i class="fas fa-tv"></i> TV de 55''</li>
+                            </ul>
+                            <div class="price">
+                                <span>S/ 250.00</span>
+                                <button class="book-now">Reservar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
             </div>
+            
         </section>
 
         <!-- Sección de restaurantes -->
@@ -331,7 +403,7 @@
     </div>
 </div>
 
-    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/916410461" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

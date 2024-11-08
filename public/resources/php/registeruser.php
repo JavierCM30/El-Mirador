@@ -1,6 +1,6 @@
 <?php
 session_start(); // Iniciar la sesión para usar variables de sesión
-require_once '../../../config/conexion.php';
+require_once '../../../config/conexion.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Recibiendo datos del formulario

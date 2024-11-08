@@ -18,5 +18,7 @@
         require_once "../views/login-register.php";
     }elseif($uri == '/hospedaje/public/logout/') {
         require_once "../public/resources/php/logout.php";
+    }elseif($uri == "/hospedaje/public/carrito/") {
+        require_once "../views/carrito-hospedaje.php";
     }
 ?>
